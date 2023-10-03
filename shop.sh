@@ -101,10 +101,7 @@ sudo rm -rf /etc/nginx/sites-available/default
 sudo rm -rf /etc/nginx/sites-enabled/default
 
 #Create a new Nginx virtual host file.
-#sudo touch /etc/nginx/sites-available/$FQDN.conf
 #Open and edit the file.
-#sudo nano /etc/nginx/sites-available/$FQDN.conf
-# Paste the following contents:
 echo 'server {'  >> /etc/nginx/conf.d/$FQDN.conf
 echo 'listen 80;' >> /etc/nginx/conf.d/$FQDN.conf
 echo '    listen [::]:80;' >> /etc/nginx/conf.d/$FQDN.conf
@@ -136,27 +133,6 @@ sudo service nginx restart
 #Step 5: Configure nopCommerce as a Service:
 #To start nopCommerce, it must be running as a service on the server. To do this, create a new service file in the systemd directory.
 #Open and edit the file.
-#sudo nano /etc/systemd/system/$FQDN.service
-#cat > /etc/systemd/system/$FQDN.service <<END
-#Paste the following contents:
-#[Unit]
-#Description=ebook shop eCommerce application
-#[Service]
-#WorkingDirectory=/var/www/$FQDN/
-#ExecStart=/usr/bin/dotnet /var/www/$FQDN/Nop.Web.dll
-#Restart=always
-# Auto restart nopCommerce in 10 seconds if .NET crashes
-#RestartSec=10
-#KillSignal=SIGINT
-#SyslogIdentifier=nopcommerce
-#User=www-data
-#Environment=ASPNETCORE_ENVIRONMENT=Production
-#Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
-#[Install]
-#WantedBy=multi-user.target
-#END
-
-sudo nano /etc/systemd/system/$FQDN.service
 echo '[Unit]'  >> /etc/systemd/system/$FQDN.service
 echo 'Description=ebook shop eCommerce application'  >> /etc/systemd/system/$FQDN.service
 echo '[Service]'  >> /etc/systemd/system/$FQDN.service
