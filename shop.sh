@@ -103,12 +103,12 @@ sudo rm -rf /etc/nginx/sites-enabled/default
 
 #Create a new Nginx virtual host file.
 #Open and edit the file.
-echo 'server {'  >> /etc/nginx/conf.d/$FQDN.conf
+echo 'server {' >> /etc/nginx/conf.d/$FQDN.conf
 echo 'listen 80;' >> /etc/nginx/conf.d/$FQDN.conf
 echo '    listen [::]:80;' >> /etc/nginx/conf.d/$FQDN.conf
 echo 'root /var/www/'${FQDN}/';'>> /etc/nginx/conf.d/$FQDN.conf
-echo 'server_name  '${FQDN}';' >> /etc/nginx/conf.d/$FQDN.conf
-echo 'location / { ' >> /etc/nginx/conf.d/$FQDN.conf
+echo 'server_name '${FQDN}';' >> /etc/nginx/conf.d/$FQDN.conf
+echo 'location / {' >> /etc/nginx/conf.d/$FQDN.conf
 echo 'proxy_pass         http://localhost:5000;' >> /etc/nginx/conf.d/$FQDN.conf
 echo 'proxy_http_version 1.1;' >> /etc/nginx/conf.d/$FQDN.conf
 echo 'proxy_set_header   Upgrade $http_upgrade;' >> /etc/nginx/conf.d/$FQDN.conf
@@ -117,7 +117,6 @@ echo 'proxy_set_header   Host $host;' >> /etc/nginx/conf.d/$FQDN.conf
 echo 'proxy_cache_bypass $http_upgrade;' >> /etc/nginx/conf.d/$FQDN.conf
 echo 'proxy_set_header   X-Forwarded-For $proxy_add_x_forwarded_for;' >> /etc/nginx/conf.d/$FQDN.conf
 echo 'proxy_set_header   X-Forwarded-Proto $scheme;' >> /etc/nginx/conf.d/$FQDN.conf
-echo '		}' >> /etc/nginx/conf.d/$FQDN.conf
 echo '	}' >> /etc/nginx/conf.d/$FQDN.conf
 echo '}' >> /etc/nginx/conf.d/$FQDN.conf
 #Save and close the file.
