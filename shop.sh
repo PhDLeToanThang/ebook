@@ -74,7 +74,6 @@ dotnet --list-runtimes
 #Microsoft.AspNetCore.App 6.0.3 [/usr/share/dotnet/shared/Microsoft.AspNetCore.App]
 #Microsoft.NETCore.App 6.0.3 [/usr/share/dotnet/shared/Microsoft.NETCore.App]
 
-
 #Step 3: Install nopCommerce
 # Create the nopCommerce webroot directory. Replace $FQDN with your subdomain or preferred naming style.
 sudo mkdir /var/www/$FQDN
@@ -91,8 +90,8 @@ sudo chown -R www-data:www-data /var/www/$FQDN
 # All necessary files are now available on the server. Next, configure Nginx as a reverse proxy to serve these files on your subdomain.
 
 #Configure permissions.
-sudo chmod -R 755 /var/www/html/$FQDN
-sudo chown -R www-data:www-data /var/www/html/$FQDN
+sudo chmod -R 755 /var/www/$FQDN
+sudo chown -R www-data:www-data /var/www/$FQDN
 
 #Step 4: Configure Nginx
 sudo apt install nginx -y
@@ -102,14 +101,14 @@ sudo rm -rf /etc/nginx/sites-available/default
 sudo rm -rf /etc/nginx/sites-enabled/default
 
 #Create a new Nginx virtual host file.
-sudo touch /etc/nginx/sites-available/$FQDN.conf
+#sudo touch /etc/nginx/sites-available/$FQDN.conf
 #Open and edit the file.
-sudo nano /etc/nginx/sites-available/$FQDN.conf
+#sudo nano /etc/nginx/sites-available/$FQDN.conf
 # Paste the following contents:
 echo 'server {'  >> /etc/nginx/conf.d/$FQDN.conf
 echo 'listen 80;' >> /etc/nginx/conf.d/$FQDN.conf
 echo '    listen [::]:80;' >> /etc/nginx/conf.d/$FQDN.conf
-echo 'root /var/www/html/'${FQDN}/';'>> /etc/nginx/conf.d/$FQDN.conf
+echo 'root /var/www/'${FQDN}/';'>> /etc/nginx/conf.d/$FQDN.conf
 echo 'server_name  '${FQDN}';' >> /etc/nginx/conf.d/$FQDN.conf
 echo 'location / {' >> /etc/nginx/conf.d/$FQDN.conf
 echo 'location / { ' >> /etc/nginx/conf.d/$FQDN.conf
@@ -214,7 +213,7 @@ whereis apache2
 apache2: /etc/apache2
 sudo rm -rf /etc/apache2
 
-sudo ln -s /usr/share/phpmyadmin /var/www/html/$FQDN/$phpmyadmin
+sudo ln -s /usr/share/phpmyadmin /var/www/$FQDN/$phpmyadmin
 sudo chown -R root:root /var/lib/phpmyadmin
 sudo nginx -t
 
