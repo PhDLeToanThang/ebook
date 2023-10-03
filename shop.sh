@@ -76,6 +76,7 @@ dotnet --list-runtimes
 
 #Step 3: Install nopCommerce
 # Create the nopCommerce webroot directory. Replace $FQDN with your subdomain or preferred naming style.
+sudo mkdir /var/www
 sudo mkdir /var/www/$FQDN
 # Now, switch to the directory.
 cd /var/www/$FQDN
