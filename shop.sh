@@ -26,7 +26,7 @@ Gitnopcommerceversion="4.60.4"
 # https://www.cloudbooklet.com/install-nopcommerce-on-ubuntu-20-04-mysql-nginx-ssl/
 sudo apt update -y
 sudo apt dist-upgrade -y
-sudo apt install unzip -y
+sudo apt install unzip libgdiplus -y
 sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:ondrej/php
 sudo apt update -y
@@ -93,6 +93,10 @@ sudo chown -R www-data:www-data /var/www/$FQDN
 #Configure permissions.
 sudo chmod -R 755 /var/www/$FQDN
 sudo chown -R www-data:www-data /var/www/$FQDN
+
+#Create couple directories to run nopCommerce:
+sudo mkdir bin
+sudo mkdir logs
 
 #Step 4: Configure Nginx
 sudo apt install nginx -y
