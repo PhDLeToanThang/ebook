@@ -52,12 +52,12 @@ mysql -uroot -prootpassword -e "SHOW DATABASES";
 #Download the Ubuntu 20.04 Microsoft Package Key.
 
 cd /opt
-sudo apt-get -y install wget
+sudo apt-get install wget -y
 sudo wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
 
 #Install it on the server.
 sudo dpkg -i packages-microsoft-prod.deb
-sudo rm packages-microsoft-prod.deb
+#sudo rm packages-microsoft-prod.deb
 #Then, update the server.
 sudo apt update -y
 
@@ -81,18 +81,21 @@ sudo mkdir /var/www/$FQDN
 # Now, switch to the directory.
 cd /var/www/$FQDN
 # Then, download the latest nopCommerce stable release from its GitHub repository. In this guide, release-$Gitnopcommerceversion is installed. Consider downloading the latest file.
-sudo wget https://github.com/nopSolutions/nopCommerce/releases/download/release-$Gitnopcommerceversion/nopCommerce_$Gitnopcommerceversion_NoSource_linux_x64.zip
+#sudo wget https://github.com/nopSolutions/nopCommerce/releases/download/release-$Gitnopcommerceversion/nopCommerce_$Gitnopcommerceversion_NoSource_linux_x64.zip
+sudo wget https://github.com/nopSolutions/nopCommerce/releases/download/release-4.60.4/nopCommerce_4.60.4_NoSource_linux_x64.zip
 # Extract files from the Zip archive.
-sudo unzip nopCommerce_$Gitnopcommerceversion_NoSource_linux_x64.zip
+#sudo unzip nopCommerce_$Gitnopcommerceversion_NoSource_linux_x64.zip
+sudo unzip nopCommerce_4.60.4_NoSource_linux_x64.zip
 # To save space, delete the original zip archive.
 rm nopCommerce_$Gitnopcommerceversion_NoSource_linux_x64.zip
+rm nopCommerce_4.60.4_NoSource_linux_x64.zip
 # Grant Nginx (running as www-data) ownership permissions to the directory.
-sudo chown -R www-data:www-data /var/www/$FQDN
+sudo chown -R www-data:www-data /var/www/$FQDN/
 # All necessary files are now available on the server. Next, configure Nginx as a reverse proxy to serve these files on your subdomain.
 
 #Configure permissions.
-sudo chmod -R 755 /var/www/$FQDN
-sudo chown -R www-data:www-data /var/www/$FQDN
+sudo chmod -R 755 /var/www/$FQDN/
+sudo chown -R www-data:www-data /var/www/$FQDN/
 
 #Create couple directories to run nopCommerce:
 sudo mkdir bin
@@ -104,6 +107,7 @@ sudo apt install nginx -y
 # xoa cau hinh nginx site default
 sudo rm -rf /etc/nginx/sites-available/default
 sudo rm -rf /etc/nginx/sites-enabled/default
+rm /etc/nginx/conf.d/$FQDN.conf
 
 #Create a new Nginx virtual host file.
 #Open and edit the file.
@@ -136,6 +140,8 @@ sudo service nginx restart
 #Step 5: Configure nopCommerce as a Service:
 #To start nopCommerce, it must be running as a service on the server. To do this, create a new service file in the systemd directory.
 #Open and edit the file.
+rm /etc/systemd/system/$FQDN.service
+
 echo '[Unit]'  >> /etc/systemd/system/$FQDN.service
 echo 'Description=ebook shop eCommerce application'  >> /etc/systemd/system/$FQDN.service
 echo '[Service]'  >> /etc/systemd/system/$FQDN.service
