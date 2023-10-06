@@ -128,7 +128,7 @@ echo '}' >> /etc/nginx/conf.d/$FQDN.conf
 sudo nginx -t
 
 #Enable the configuration by creating a symlink to sites-enabled directory. 
-sudo ln -s /etc/nginx/sites-available/$FQDN.conf /etc/nginx/sites-enabled/$FQDN.conf
+sudo ln -s /etc/nginx/conf.d/$FQDN.conf /etc/nginx/sites-enabled/$FQDN.conf
 
 #Restart Nginx.
 sudo service nginx restart
