@@ -148,7 +148,6 @@ echo '[Service]'  >> /etc/systemd/system/$FQDN.service
 echo 'WorkingDirectory=/var/www/'${FQDN}'/'  >> /etc/systemd/system/$FQDN.service
 echo 'ExecStart=/usr/bin/dotnet /var/www/'${FQDN}'/Nop.Web.dll'  >> /etc/systemd/system/$FQDN.service
 echo 'Restart=always'  >> /etc/systemd/system/$FQDN.service
-echo 'Auto restart nopCommerce in 10 seconds if .NET crashes'  >> /etc/systemd/system/$FQDN.service
 echo 'RestartSec=10'  >> /etc/systemd/system/$FQDN.service
 echo 'KillSignal=SIGINT'  >> /etc/systemd/system/$FQDN.service
 echo 'SyslogIdentifier=nopcommerce'  >> /etc/systemd/system/$FQDN.service
