@@ -122,18 +122,15 @@ sudo wget https://github.com/nopSolutions/nopCommerce/releases/download/release-
 sudo unzip nopCommerce_${Gitnopcommerceversion}_NoSource_linux_x64.zip
 # To save space, delete the original zip archive.
 rm nopCommerce_${Gitnopcommerceversion}_NoSource_linux_x64.zip
-# Grant Nginx (running as www-data) ownership permissions to the directory.
-sudo chmod -R 755 /var/www/$FQDN/
-sudo chown -R www-data:www-data /var/www/$FQDN/
-# All necessary files are now available on the server. Next, configure Nginx as a reverse proxy to serve these files on your subdomain.
-
-#Configure permissions.
-sudo chmod -R 755 /var/www/$FQDN/
-sudo chown -R www-data:www-data /var/www/$FQDN/
 
 #Create couple directories to run nopCommerce:
 sudo mkdir bin
 sudo mkdir logs
+
+# Grant Nginx (running as www-data) ownership permissions to the directory.
+sudo chmod -R 755 /var/www/$FQDN
+sudo chown -R www-data:www-data /var/www/$FQDN
+# All necessary files are now available on the server. Next, configure Nginx as a reverse proxy to serve these files on your subdomain.
 
 #Step 5: Secure the Server
 #By default, Uncomplicated Firewall (ufw) is enabled on Ubuntu 20.04, configure it to allow HTTP, HTTPS traffic on the server and block the rest.
@@ -171,7 +168,7 @@ sudo systemctl enable $FQDN.service
 #Start nopCommerce.
 sudo systemctl start $FQDN.service
 #Check the current nopCommerce status.
-sudo systemctl status $FQDN.service
+#sudo systemctl status $FQDN.service
 #Restart Nginx to start serving nopCommerce on the subdomain.
 sudo systemctl restart nginx
 
@@ -181,13 +178,17 @@ sudo apt install phpmyadmin -y
 
 #Step 7.2. gỡ bỏ apache:
 sudo service apache2 stop
-sudo apt-get purge apache2 apache2-utils apache2.2-bin apache2-common
-sudo apt-get purge apache2 apache2-utils apache2-bin apache2.2-common
+sudo apt-get purge apache2 apache2-utils apache2-bin apache2.2-bin apache2-common apache2.2-common -y
 
 sudo apt-get autoremove
 whereis apache2
 apache2: /etc/apache2
 sudo rm -rf /etc/apache2
+sudo rm -rf /usr/sbin/apache2 
+sudo rm -rf /usr/lib/apache2
+sudo rm -rf /etc/apache2
+sudo rm -rf /usr/share/apache2
+sudo rm -rf /usr/share/man/man8/apache2.8.gz
 
 sudo ln -s /usr/share/phpmyadmin /var/www/$FQDN/$phpmyadmin
 sudo chown -R root:root /var/lib/phpmyadmin
@@ -205,7 +206,8 @@ sudo tar xzf phpMyAdmin-5.2.1-all-languages.tar.gz
 #We want to move the contents of this folder to /usr/share/phpmyadmin
 sudo mv phpMyAdmin-5.2.1-all-languages/* /usr/share/phpmyadmin
 #ls /usr/share/phpmyadmin
-mkdir /usr/share/phpMyAdmin/tmp   # tạo thư mục cache cho phpmyadmin 
+# tạo thư mục cache cho phpmyadmin:
+mkdir /usr/share/phpmyadmin/tmp
 
 sudo systemctl restart nginx
 systemctl restart php8.0-fpm.service
