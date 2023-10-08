@@ -27,7 +27,7 @@ Gitnopcommerceversion="4.60.4"
 sudo apt update -y
 sudo apt list --upgradable
 sudo apt upgrade -y
-sudo apt dist-upgrade -y
+#sudo apt dist-upgrade -y
 sudo apt install unzip libgdiplus -y
 sudo apt-get install software-properties-common
 sudo add-apt-repository ppa:ondrej/php
