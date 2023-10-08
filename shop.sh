@@ -137,10 +137,13 @@ sudo chown -R www-data:www-data /var/www/$FQDN
 #Step 5: Secure the Server
 #By default, Uncomplicated Firewall (ufw) is enabled on Ubuntu 20.04, configure it to allow HTTP, HTTPS traffic on the server and block the rest.
 #Allow HTTP traffic.
+
 sudo ufw allow 80/tcp
 #Allow HTTPS traffic.
 sudo ufw allow 443/tcp
 #Restart the firewall
+sudo ufw allow ssh
+sudo ufw enable
 sudo ufw reload
 
 #Step 6: Configure nopCommerce as a Service:
