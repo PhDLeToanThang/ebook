@@ -15,7 +15,7 @@ echo "phpmyadmin folder name: e.g: phpmyadmin"   # Đổi tên thư mục phpmya
 read -e phpmyadmin
 echo "nopcommerce Folder Data: e.g: nopcommercedata"   # Tên Thư mục Data vs Cache
 read -e FOLDERDATA
-echo "dbtype name: e.g: mariadb"   # Tên kiểu Database
+echo "dbtype name: e.g: mysql"   # Tên kiểu Database
 read -e dbtype
 echo "dbhost name: e.g: localhost"   # Tên Db host connector
 read -e dbhost
@@ -25,6 +25,8 @@ Gitnopcommerceversion="4.60.4"
 
 # https://www.cloudbooklet.com/install-nopcommerce-on-ubuntu-20-04-mysql-nginx-ssl/
 sudo apt update -y
+sudo apt list --upgradable
+sudo apt upgrade -y
 sudo apt dist-upgrade -y
 sudo apt install unzip libgdiplus -y
 sudo apt-get install software-properties-common
