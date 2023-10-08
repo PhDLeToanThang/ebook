@@ -94,6 +94,8 @@ echo 'location / {' >> /etc/nginx/sites-available/$FQDN.conf
 echo 'proxy_pass         http://localhost:5000;' >> /etc/nginx/sites-available/$FQDN.conf
 echo 'proxy_http_version 1.1;' >> /etc/nginx/sites-available/$FQDN.conf
 echo 'proxy_set_header   Upgrade $http_upgrade;' >> /etc/nginx/sites-available/$FQDN.conf
+echo 'proxy_connect_timeout   60s;' >> /etc/nginx/sites-available/$FQDN.conf
+echo 'proxy_read_timeout   120s;' >> /etc/nginx/sites-available/$FQDN.conf
 echo 'proxy_set_header   Connection keep-alive;' >> /etc/nginx/sites-available/$FQDN.conf
 echo 'proxy_set_header   Host $host;' >> /etc/nginx/sites-available/$FQDN.conf
 echo 'proxy_cache_bypass $http_upgrade;' >> /etc/nginx/sites-available/$FQDN.conf
@@ -110,7 +112,6 @@ sudo ln -s /etc/nginx/sites-available/$FQDN.conf /etc/nginx/sites-enabled/$FQDN.
 
 #Restart Nginx.
 sudo service nginx restart
-
 
 #Step 4: Install nopCommerce
 # Create the nopCommerce webroot directory. Replace $FQDN with your subdomain or preferred naming style.
