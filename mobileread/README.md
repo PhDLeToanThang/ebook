@@ -18,7 +18,7 @@ _(nên dùng nhóm này vì người đọc có thể tự tải ebook từ các
 
 # Mô hình khai thác sử dụng Apps Mobility cho Người dùng đọc sách Online:
 
-![image](https://github.com/PhDLeToanThang/ebook/assets/106635733/26a2dcb9-5c91-40b4-9f04-894d7bff5228)
+![DigitalBusinessTransform-Mobile Read ebook](https://github.com/PhDLeToanThang/ebook/assets/106635733/b609405e-af68-49d4-bf80-e756cf14ca9a)
 
 # Hướng dẫn tải và cài phần mềm FBReader cho thiết bị đọc sách:
 
