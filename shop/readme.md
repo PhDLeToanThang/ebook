@@ -19,3 +19,8 @@ dbtype name: e.g: mysql<br>
 dbhost name: e.g: localhost<br>
 <br>
 Sau cùng khi cài xong hệ thống sẽ cần bạn mở trình duyệt truy cập để cấu hình tài khoản Admin quản trị và các thông tin Database.
+
+## Debug:
+>> Cấu hình quản trị như thế nào để disable phần đăng ký nhận tin tức và không gửi email Verify Newsletter trong nop-commerce #7
+https://github.com/PhDLeToanThang/ebook/issues/7
+
