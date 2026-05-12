@@ -8,7 +8,7 @@ https://calibre-ebook.com <br/>
 # Calibre User Manual
 calibre is an e-book library manager. It can view, convert and catalog e-books in most of the major e-book formats. It can also talk to many e-book reader devices. It can go out to the Internet and fetch metadata for your books. It can download newspapers and convert them into e-books for convenient reading. It is cross platform, running on Linux, Windows and macOS. Tài liệu: https://manual.calibre-ebook.com/
 
-# CHuẩn mô hình kinh doanh sách Calibre là thuộc "Tự tổ chức Kinh Doanh, Quản lý Xuất bản DRM-free-Ebook"
+# Chuẩn mô hình kinh doanh sách Calibre là thuộc "Tự tổ chức Kinh Doanh, Quản lý Xuất bản DRM-free-Ebook"
 
 Mô hình tổng quát về 2 loại sách điện tử hiện nay trên thế giới:
 
