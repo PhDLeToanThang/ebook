@@ -389,19 +389,19 @@ Dưới đây là pipeline **tối ưu nhất** để giải quyết bài toán 
 ```
 ┌──────────────────────────────────────────────────────────────────────────┐
 │  BƯỚC 1: OCR & DOCUMENT PARSING                                          │
-│  (Scan ảnh/giấy → Dữ liệu có cấu trúc)                                    │
+│  (Scan ảnh/giấy → Dữ liệu có cấu trúc)                                   │
 │                                                                          │
-│  Công cụ:                                                                 │
-│  ├─ Surya (layout + OCR + table) — cho ảnh/scan chất lượng cao            │
-│  ├─ VNCV (tiếng Việt OCR) — cho văn bản tiếng Việt                        │
+│  Công cụ:                                                                │
+│  ├─ Surya (layout + OCR + table) — cho ảnh/scan chất lượng cao           │
+│  ├─ VNCV (tiếng Việt OCR) — cho văn bản tiếng Việt                       │
 │  ├─ Docling/MinerU — cho PDF, Word, PPT → Markdown/JSON                  │
-│  └─ YAI-Excel (vision → audit JSON) — cho ảnh chụp bảng tính/biểu đồ    │
+│  └─ YAI-Excel (vision → audit JSON) — cho ảnh chụp bảng tính/biểu đồ     │
 │                                                                          │
 │  Output: JSON/Markdown/CSV có cấu trúc                                   │
 └──────────────────────────────────────────────────────────────────────────┘
                                   ↓
 ┌──────────────────────────────────────────────────────────────────────────┐
-│  BƯỚC 2: RAG & KNOWLEDGE BASE (AI/ML Học & Q&A)                         │
+│  BƯỚC 2: RAG & KNOWLEDGE BASE (AI/ML Học & Q&A)                          │
 │                                                                          │
 │  Công cụ (chọn 1):                                                       │
 │  ├─ nom-vn (tối ưu cho tiếng Việt, local-first, pip install)             │
@@ -413,16 +413,16 @@ Dưới đây là pipeline **tối ưu nhất** để giải quyết bài toán 
 └──────────────────────────────────────────────────────────────────────────┘
                                   ↓
 ┌──────────────────────────────────────────────────────────────────────────┐
-│  BƯỚC 3: EXCEL AUTOMATION & BI                                          │
+│  BƯỚC 3: EXCEL AUTOMATION & BI                                           │
 │  (Điền ô, tính KPI, vẽ chart)                                            │
 │                                                                          │
-│  Công cụ:                                                                 │
-│  ├─ YAI-Excel — vision → audit JSON → .xlsx (tự động sinh KPI, chart,   │
+│  Công cụ:                                                                │
+│  ├─ YAI-Excel — vision → audit JSON → .xlsx (tự động sinh KPI, chart,    │
 │  │             pivot, formula, conditional format)                       │
 │  ├─ OpenAgent — Office tool cho agent đọc/ghi Excel                      │
-│  └─ Python script — openpyxl/xlsxwriter cho custom KPI engine           │
+│  └─ Python script — openpyxl/xlsxwriter cho custom KPI engine            │
 │                                                                          │
-│  Output: File Excel hoàn chỉnh với KPI, chart, formula                  │
+│  Output: File Excel hoàn chỉnh với KPI, chart, formula                   │
 └──────────────────────────────────────────────────────────────────────────┘
 ```
 
