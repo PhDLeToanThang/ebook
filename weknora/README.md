@@ -71,18 +71,18 @@ WeKnora được thiết kế theo kiến trúc **fully modular** — mọi thà
 ┌─────────────────────────────────────────────────────────────────────┐
 │                        Web UI (Vue 3 + TypeScript)                  │
 ├─────────────────────────────────────────────────────────────────────┤
-│  CLI (weknora)  │  REST API  │  MCP Server  │  Chrome Ext  │  MP   │
+│   CLI (weknora)  │  REST API  │  MCP Server  │  Chrome Ext  │  MP   │
 ├─────────────────────────────────────────────────────────────────────┤
 │                        Backend (Go)                                 │
-│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐ │
-│  │ Ingestion│ │ Parser   │ │ Retriever│ │ Agent    │ │ Wiki     │ │
-│  │ Pipeline │ │ Pipeline │ │ Pipeline │ │ Engine   │ │ Generator│ │
-│  └──────────┘ └──────────┘ └──────────┘ └──────────┘ └──────────┘ │
+│  ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐ ┌──────────┐   │
+│  │ Ingestion│ │ Parser   │ │ Retriever│ │ Agent    │ │ Wiki     │   │
+│  │ Pipeline │ │ Pipeline │ │ Pipeline │ │ Engine   │ │ Generator│   │
+│  └──────────┘ └──────────┘ └──────────┘ └──────────┘ └──────────┘   │
 ├─────────────────────────────────────────────────────────────────────┤
-│  Langfuse Observability  │  RBAC Auth  │  Task Queue (MQ)          │
+│  Langfuse Observability  │  RBAC Auth  │  Task Queue (MQ)           │
 ├─────────────────────────────────────────────────────────────────────┤
-│  LLM Providers  │  Vector DBs  │  Object Storage  │  Graph DB      │
-│  (20+)          │  (8+)        │  (7+)            │  (Neo4j)       │
+│  LLM Providers  │  Vector DBs  │  Object Storage  │  Graph DB       │
+│  (20+)          │  (8+)        │  (7+)            │  (Neo4j)        │
 └─────────────────────────────────────────────────────────────────────┘
 ```
 
