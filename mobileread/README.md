@@ -30,9 +30,9 @@
 
 1. Mở FBReader → **Kho sách trên mạng** (Network Library)
 2. Chọn **Thêm thư mục** (Add Catalog)
-3. Nhập URL: `https://ebook.cloud.edu.vn:8083/opds`
+3. Nhập URL: `https://ebook.cloud:8443/opds`
 4. Nhập **Tên đăng nhập** và **Mật khẩu** (do Thủ thư cấp)
-5. Đặt tên cho kho sách (vd: "Thư viện ebook.cloud.edu.vn")
+5. Đặt tên cho kho sách (vd: "Thư viện ebook.cloud")
 6. Lưu lại
 
 ### Bước 3: Duyệt và Đọc sách
@@ -61,7 +61,7 @@
 │                             │                                      │
 │                             ▼                                      │
 │  ┌─────────────────────────────────────────────────────────────┐   │
-│  │  https://ebook.cloud.edu.vn:8083/opds                       │   │
+│  │  https://ebook.cloud:8443/opds                              │   │
 │  │  calibre-server (OPDS 1.2)                                  │   │
 │  │  HTTP Basic Auth → Danh mục sách → Tải file                 │   │
 │  └─────────────────────────────────────────────────────────────┘   │
