@@ -198,10 +198,10 @@ flowchart LR
 
 | Mục | Trạng thái |
 |-----|-----------|
-| File PDF gốc (`D:\BaiTap4\OCR-Exam_KNIME-L1_AI_Certificate.pdf`) | ❌ Không tồn tại trên hệ thống hiện tại |
-| File DOCX template (`D:\BaiTap4\Exam_KNIME-L1_AI_Certificate_Template.docx`) | ❌ Không tồn tại trên hệ thống hiện tại |
-| File XML mẫu (`D:\BaiTap4\2V0-16.25_q1-q50.xml`) | ❌ Không tồn tại trên hệ thống hiện tại |
-| Đường dẫn đích (`D:\BaiTap4\`) | ❌ Thư mục chưa được tạo |
+| File PDF gốc (`D:\BaiTap4\OCR-Exam_KNIME-L1_AI_Certificate.pdf`) | ❌ Không ghi trên hệ thống hiện tại |
+| File DOCX template (`D:\BaiTap4\Exam_KNIME-L1_AI_Certificate_Template.docx`) | ❌ Không ghi trên hệ thống hiện tại |
+| File XML mẫu (`D:\BaiTap4\2V0-16.25_q1-q50.xml`) | ❌ Không ghi trên hệ thống hiện tại |
+| Đường dẫn đích (`D:\BaiTap4\`) | ❌ Không ghi vào Thư mục này |
 | Báo cáo này | ✅ Tổng kết kịch bản dựa trên mô tả |
 
 *Tài liệu tổng kết Bài tập 4 — Dự án LPAI-OCR-Excel*
