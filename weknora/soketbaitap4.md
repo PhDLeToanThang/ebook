@@ -1,5 +1,12 @@
 # Bài tập 4: Tổng kết quy trình OCR → DOCX → Moodle Quiz XML
 
+>>>Hãy tổng kết lại bài tập 4, dựa trên kịch bản thực hành bài tập 4 như sau:
+Kịch bản Với luồng xử lý và yêu cầu sau:
+Đã có file OCR D:\BaiTap4\OCR-Exam_KNIME-L1_AI_Certificate.pdf  --> Hãy điền tất cả các nội dung có trong file pdf sang tương ứng với File Docx: D:\BaiTap4\Exam_KNIME-L1_AI_Certificate_Template.docx --> Tiếp theo phải ĐIền đáp án đúng vào mục Correct answer: và Hint: các lý lẽ giải thích thuyết phục chính xác , có dẫn chứng (nếu có). --> Tiếp theo dựa trên tham khảo mẫu chuẩn đầu vào của Moodle Quiz XML có 1 file đề thi đã làm D:\BaiTap4\2V0-16.25_q1-q50.xml để đối chiếu và xuất ra 1 file XML theo chuẩn Moodel Quiz Exam_KNIME-L1_AI_Certificate.XML lưu vào thư mục Dự án của My Document 
+Nội dung tổng kết cần bổ sung bản vẽ lưu đồ của kịch bản, tiếp theo phân tích độ phức tập của bài tập như: Ngoài việc điền nội dung OCR sang file mẫu, còn phải làm tiếp phần nội dung đáp án (trường Correct Answer tự động, và Hint giải thích); mức độ phức tạp khi phải tìm cách kiểm tra chất lượng Đáp án trả lời đúng và Hint của AI tự làm.  Và tiếp theo là xuất ra dữ liệu định dạng theo mẫu chuẩn đã có (Mẫu chuẩn còn thiếu quy ước định dạng ngoài dạng Choise, Multi choise còn có Matching, Mapping Path...). Kết quả ứng dụng tự động ở Bài 4 cho ta thấy cách Local Private AI có khả năng tự động hóa cao, và các khâu kiểm định vẫn cần Review, có bằng chứng để kiểm tra rà soát, đối soát.
+
+---
+
 ## 1. Lưu đồ kịch bản xử lý
 
 ```mermaid
